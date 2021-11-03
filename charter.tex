@@ -7,28 +7,28 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Desarrollo de un controlador para un sensor lineal de carga acoplada con aplicaciones en sensado remoto} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
-\posgrado{Carrera de Especialización en Sistemas Embebidos} 
+%\posgrado{Carrera de Especialización en Sistemas Embebidos} 
 %\posgrado{Carrera de Especialización en Internet de las Cosas} 
 %\posgrado{Carrera de Especialización en Intelegencia Artificial}
-%\posgrado{Maestría en Sistemas Embebidos} 
+\posgrado{Maestría en Sistemas Embebidos} 
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Nombre del Autor} 
+\autor{Dr. Ing. Jacobo O. Salvador} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
-\pertenenciaDirector{pertenencia} 
+\director{Mg. Ing. Lucio Martínez Garbino}
+\pertenenciaDirector{CNEA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
+\codirector{Esp. Ing. Gonzalo Lavigna} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Mg. Ing. Rafael Oliva Beltran}
+\empresaCliente{L\&R Ingeniería}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -38,8 +38,8 @@ codirector, % Uncomment to add a codirector to the title page
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{30 de abril de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2021} 	%Fecha de final de cursada de GdP
+\fechaINICIO{22 de octubre de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{9 de diciembre de 2021} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
 
 
@@ -69,7 +69,7 @@ codirector, % Uncomment to add a codirector to the title page
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
+1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
 %2      & Se completa hasta el punto 7 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de un calefón}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{black}{el desarrollo e implementación de un prototipo de sistema  de adquisicion de imagenes por medio de un sensor lineal de carga acoplada}, y tendrá un presupuesto preliminar estimado de \textcolor{black}{600} hs de trabajo y \textcolor{black}{\$50000}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -117,6 +117,47 @@ Se adjunta a esta acta la planificación inicial.
 
 
 \begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
+
+Este trabajo final consiste en el desarrollo e implementación de un prototipo de sistema  de adquisición de imágenes por medio de un sensor lineal de carga acoplada. El dispositivo tiene aplicación en el campo de mediciones remotas. 
+
+Un sensor lineal esta compuesto por un arreglo de sensores dispuestos en forma equidistante y de tamaño fijo que puede tener una disposición lineal o rectangular dependiendo del diseño de su aplicación. El principio de su funcionamiento se centra en acumular cargas resultante de la interacción de la luz con la materia y a posterior la recolección de la información para su tratamiento digital.
+
+En los últimos años por el avance tecnológico se permitió incrementar el orden de integración de los sensores acoplados y aumentar su sensibilidad. Estos sensores encuentran aplicaciones en dispositivos como camaras, lectores de código, espectrometros y en ramas de la ciencia como la astronomía, el procesamiento de imagenes, aprendizaje supervisado, etc.
+
+Por su bajo costo, confiabilidad y disponibilidad los sensores de carga acoplada encontraron una aplicación en el campo de las mediciones remotas. Esto permitió reducir fuerte los costos de desarrollo e implementación. 
+
+El desarrollo e implementación de nuevas generaciones de sensores para medir distancia utilizando sensores por carga acoplada, representa un desafió como también una oportunidad para que nuevas tecnologías puedan desarrollarse.
+
+Un sistema  basado en la técnica  LiDAR que funciona enviando pulsos cortos de luz y midiendo su reflejo puede variar su costo de desarrollo e implementación desde cientos de dolares a decenas de miles. La utilización de sensores acoplados permiten reducir en un factor de diez o mas los costos, debido a la reducción en los requerimientos funcionales del sistema de emisión y adquisición. 
+
+
+En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que el sistema de medición remoto se compone de un emisor y una camara. 
+%\vspace{25px}
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.9\textwidth]{./Figuras/esquema_png.png}
+\caption{Diagrama en bloques del sistema. El área delimitada por la linea con guiones rojos representa el alcance de este proyecto}
+\label{fig:diagBloques}
+\end{figure}
+
+\vspace{25px}
+
+Esta utiliza un sensor de carga acoplada como sensor de la luz entrante a traves de la lente.Un sistema digital basado en un arreglo de compuerta programables es responsable de digitalizar la senial, controlar el sensor y realizar el procesamiento de datos para ser enviado a una aplicación en la computadora responsable de la recopilación y seguimiento de las mediciones. 
+
+La adquisición de medidas en el tiempo van armando un conjunto de imágenes dispuestas en un arreglo lineal. En el mercado existen dispositivos que permiten controlar y adquirir con un sensor de acopladores. En este proyecto se agrega un modulo de procesamiento embebido en la unidad digitalizadora que permite adecuar las seniales en base a la aplicación que se este desarrollando. 
+
+
+
+
+
+
+
+
+
+
+
+
 
 El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
 
@@ -199,7 +240,7 @@ Por ejemplo:
 \begin{itemize}
 	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
 	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
+	\item Orientador: Lucio Martínez Garbino va a poder ayudar mucho con la definición de los requerimientos.
 \end{itemize}
 
 \end{consigna}
@@ -213,6 +254,8 @@ Por ejemplo:
 ¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
 
 Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
+El propósito de este proyecto es generar una interfaz para un dispositivo de carga acoplada mediante la utilización de un arreglo de compuertas que permita incluir el control del dispositivo sensor. Se pretende lograr que el procesamiento de las seniales se realice en el dispositivo de control. Se pretende incrementar la integración y reducir la de carga de procesamiento en la aplicación asociada.
+
 \end{consigna}
 
 \section{4. Alcance del proyecto}
