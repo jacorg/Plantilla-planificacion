@@ -7,7 +7,7 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Desarrollo de un controlador para un sensor lineal de carga acoplada con aplicaciones en sensado remoto} 
+\titulo{Desarrollo de un controlador para un sensor lineal de carga acoplada con aplicación en mediciones a distancia} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -69,7 +69,7 @@ codirector, % Uncomment to add a codirector to the title page
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
+1      & Se completa hasta el punto 4 inclusive                 & 04/11/2021 \\ \hline
 %2      & Se completa hasta el punto 7 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{black}{el desarrollo e implementación de un prototipo de sistema  de adquisicion de imagenes por medio de un sensor lineal de carga acoplada}, y tendrá un presupuesto preliminar estimado de \textcolor{black}{600} hs de trabajo y \textcolor{black}{\$50000}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{black}{el desarrollo e implementación de un prototipo de sistema  de adquisición de imágenes por medio de un sensor lineal de carga acoplada}, y tendrá un presupuesto preliminar estimado de \textcolor{black}{600} hs de trabajo y \textcolor{black}{\$100000}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -116,22 +116,18 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
 
-Este trabajo final consiste en el desarrollo e implementación de un prototipo de sistema  de adquisición de imágenes por medio de un sensor lineal de carga acoplada. El dispositivo tiene aplicación en el campo de mediciones remotas. 
+Este trabajo final consiste en el desarrollo e implementación de un prototipo de sistema  de adquisición de imágenes por medio de un sensor lineal de carga acoplada. El dispositivo tiene aplicación en el campo de mediciones remotas para seguimiento en el tiempo de objetos desde el orden de  micrones a centímetros. 
 
-Un sensor lineal esta compuesto por un arreglo de sensores dispuestos en forma equidistante y de tamaño fijo que puede tener una disposición lineal o rectangular dependiendo del diseño de su aplicación. El principio de su funcionamiento se centra en acumular cargas resultante de la interacción de la luz con la materia y a posterior la recolección de la información para su tratamiento digital.
+Un sensor lineal por cargas acopladas o CCD en inglés se compone de un arreglo de sensores dispuestos en forma equidistante y de tamaño fijo que puede tener una disposición lineal o rectangular dependiendo de su diseño o aplicación. El principio de su funcionamiento se centra en acumular cargas resultante de la interacción de la luz con la materia. Una interfaz recolecta la información analógica para su tratamiento digital.
 
-En los últimos años por el avance tecnológico se permitió incrementar el orden de integración de los sensores acoplados y aumentar su sensibilidad. Estos sensores encuentran aplicaciones en dispositivos como camaras, lectores de código, espectrometros y en ramas de la ciencia como la astronomía, el procesamiento de imagenes, aprendizaje supervisado, etc.
+En los últimos años debido al avance tecnológico se permitió incrementar el orden de integración de los sensores acoplados y aumentar su sensibilidad. Estos sensores encuentran aplicaciones en dispositivos como cámaras, lectores de código, espectrometros y en ramas de la ciencia como la astronomía, el procesamiento de imágenes, aprendizaje supervisado, etc.
 
-Por su bajo costo, confiabilidad y disponibilidad los sensores de carga acoplada encontraron una aplicación en el campo de las mediciones remotas. Esto permitió reducir fuerte los costos de desarrollo e implementación. 
+Por su bajo costo, confiabilidad y disponibilidad, los sensores de carga acoplada encontraron aplicaciones en el campo de las mediciones remotas o a distancia. Esto permitió reducir fuerte los costos de desarrollo e implementación de nuevos sensores. Sin dudas esto representa un desafió como también una oportunidad para que nuevas tecnologías puedan desarrollarse.
 
-El desarrollo e implementación de nuevas generaciones de sensores para medir distancia utilizando sensores por carga acoplada, representa un desafió como también una oportunidad para que nuevas tecnologías puedan desarrollarse.
+Un sistema  basado en la técnica  LiDAR \textit{(Light Detection and Ranging)} para medir distancias de objetos funciona en su mayoría enviando pulsos cortos de luz y midiendo su reflejo. Su costo de desarrollo e implementación puede varias desde cientos de dolares a decenas de miles. La utilización de sensores acoplados permiten reducir en un factor de diez o mas los costos, debido a la reducción en los requerimientos funcionales del sistema de emisión y adquisición. 
 
-Un sistema  basado en la técnica  LiDAR que funciona enviando pulsos cortos de luz y midiendo su reflejo puede variar su costo de desarrollo e implementación desde cientos de dolares a decenas de miles. La utilización de sensores acoplados permiten reducir en un factor de diez o mas los costos, debido a la reducción en los requerimientos funcionales del sistema de emisión y adquisición. 
-
-
-En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que el sistema de medición remoto se compone de un emisor y una camara. 
+En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que el sistema de medición remoto se compone de un emisor y una cámara. 
 %\vspace{25px}
 
 \begin{figure}[htpb]
@@ -141,72 +137,23 @@ En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistem
 \label{fig:diagBloques}
 \end{figure}
 
-\vspace{25px}
-
-Esta utiliza un sensor de carga acoplada como sensor de la luz entrante a traves de la lente.Un sistema digital basado en un arreglo de compuerta programables es responsable de digitalizar la senial, controlar el sensor y realizar el procesamiento de datos para ser enviado a una aplicación en la computadora responsable de la recopilación y seguimiento de las mediciones. 
-
-La adquisición de medidas en el tiempo van armando un conjunto de imágenes dispuestas en un arreglo lineal. En el mercado existen dispositivos que permiten controlar y adquirir con un sensor de acopladores. En este proyecto se agrega un modulo de procesamiento embebido en la unidad digitalizadora que permite adecuar las seniales en base a la aplicación que se este desarrollando. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
-
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
-
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
-
-\begin{itemize}
-	\item ¿Cómo se vincula este proyecto con la misión de la organización?
-	\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-	\item ¿Cuáles son las necesidades que debe satisfacer?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
-
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase, se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
-
 %\vspace{25px}
 
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=.5\textwidth]{./Figuras/diagBloques.png}
-\caption{Diagrama en bloques del sistema}
-\label{fig:diagBloques}
-\end{figure}
+Esta utiliza un sensor de carga acoplada como sensor de la luz entrante a través de la lente. La información colectada se traduce en una imagen y un sistema digital basado en un arreglo de compuerta programables es responsable de digitalizar la señal, controlar el sensor y realizar el procesamiento de datos. El dato procesado se envía a una aplicación en la computadora responsable de la recopilación y seguimiento de las mediciones. 
 
-\vspace{25px}
+La continua adquisición de medidas en el tiempo va armando un conjunto de imágenes dispuestas en un arreglo lineal de filas y columnas. En el mercado existen dispositivos que permiten controlar y adquirir imágenes con un sensor de acopladores, pero son insuficientes cuando se desea hacer procesamiento de los datos en tiempo real.
 
-El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
-\end{consigna}
+El presente proyecto se destaca especialmente por incorporar un modulo de procesamiento embebido en la unidad de control que permite hacer operaciones estadísticas sobre la misma y reducir carga de procesamiento en la computadora. Esta característica nueva se diferencia de otros dispositivos en el mercado que hacen sus análisis una vez que la señal se almaceno, no pudiendo cumplir con requerimientos de procesamiento en tiempo real.
+
+
+
 
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} 
-Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
- 
-Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
+\begin{consigna}{black} 
 
-\begin{itemize}
-\item Si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente.
-\item Si una persona es el Responsable, no debe ser colocado también como Miembro del equipo.
-\end{itemize}
-
-Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -215,33 +162,20 @@ Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por e
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
-Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
+Auspiciante   & \clientename      & \empclientename             	& Jefe       	\\ \hline
+Cliente       & \clientename      &\empclientename &	Jefe         	\\ \hline
+Impulsor      & Dra Sandra Casas                  & UNPA-UARG      &  Directora ITA      	\\ \hline
+Responsable   & \authorname       & CONICET        	& Alumno 	\\ \hline
+Colaboradores & Esp. Ing Gonzalo Lavigna & FIUBA              	&Codirector        	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Equipo        & Ing. Jonathan Quiroga \newline 
+			      Florencia Luna                                &  UNPA-UARG        	&  Investigador      	\\ \hline
+
+Usuario final & Tec. Nahuel Diaz   &   CPA-CONICET   &  Técnico operador      	\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los Orientadores.
 
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
-\begin{itemize}
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-	\item Orientador: Lucio Martínez Garbino va a poder ayudar mucho con la definición de los requerimientos.
-\end{itemize}
 
 \end{consigna}
 
@@ -250,25 +184,33 @@ Por ejemplo:
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
+\begin{consigna}{black}
+El propósito de este proyecto es generar el diseño y la implementación de un dispositivo de carga acoplada mediante la utilización de un arreglo de compuertas que permita incluir el control del dispositivo sensor por medio de una interfaz. 
 
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-El propósito de este proyecto es generar una interfaz para un dispositivo de carga acoplada mediante la utilización de un arreglo de compuertas que permita incluir el control del dispositivo sensor. Se pretende lograr que el procesamiento de las seniales se realice en el dispositivo de control. Se pretende incrementar la integración y reducir la de carga de procesamiento en la aplicación asociada.
+Se pretende lograr que el procesamiento intensivo de las señales se realice en el dispositivo de control a través de un sistema embebido que permita incrementar la integración y reducir la carga de procesamiento en la computadora. 
+
+Las aplicaciones de este tipo de sensor en conjunto con un sistema óptico pueden cubrir un amplio rango de aplicaciones en el campo del sensado remoto.
+
+Un objetivo superior es lograr que el sistema sea escalable a otros sensores de la familia que se utilice.
 
 \end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+\begin{consigna}{black}
+El presente proyecto incluye:
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
+\begin{itemize}
+	\item Diseño y elaboración de una placa de montaje superficial para instalar el sensor de imagen.
+	\item Integración del hardware de control embebido en una placa FPGA.
+	\item Selección del sensor de imagen según requerimientos del cliente
+	\item Desarrollo del software para captura de datos y almacenamiento de la información en una computadora.
+	\item Documentación
 
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
+\end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+El presente proyecto no incluye especificaciones mecánicas de movimiento y manipulación del dispositivo.
 
 \end{consigna}
 
@@ -276,16 +218,18 @@ Explicitar además todo lo que no quede incluido (``El presente proyecto no incl
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+
+Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item Se contará con disponibilidad horaria
+	\item Se contará con las herramientas de hardware y software desde el inicio del proyecto
+	\item Se contará con el apoyo financiero durante todo el desarrollo
+	\item Se contará con posibilidad de conseguir el sensor óptico y la placa FPGA
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
+
+
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
@@ -296,7 +240,7 @@ Los requerimientos deben numerarse y de ser posible estar agruparlos por afinida
 \begin{enumerate}
 	\item Requerimientos funcionales
 		\begin{enumerate}
-			\item El sistema debe...
+			\item El sistema debe adquirir como máximo 2000 lineas por segundo
 			\item Tal componente debe...
 			\item El usuario debe poder...
 		\end{enumerate}
@@ -306,7 +250,14 @@ Los requerimientos deben numerarse y de ser posible estar agruparlos por afinida
 			\item Requerimiento 2 (prioridad menor)
 		\end{enumerate}
 	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
+	
+	\item Requerimientos de la interfaz
+	\begin{enumerate}
+			\item Comunicacion con PC a traves de puerto USB
+			\item La apliacion en PC almacena y visualiza los datos
+			\item la interfaz debe mostrat estimadores como la mediana, valores maximos y mínimos de la senial.
+		\end{enumerate}
+	
 	\item Requerimientos interoperabilidad...
 	\item etc...
 \end{enumerate}
