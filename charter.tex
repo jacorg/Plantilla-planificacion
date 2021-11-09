@@ -70,7 +70,7 @@ codirector, % Uncomment to add a codirector to the title page
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
 1      & Se completa hasta el punto 4 inclusive                 & 04/11/2021 \\ \hline
-%2      & Se completa hasta el punto 7 inclusive
+2      & Se completa hasta el punto 9 inclusive                 & 09/11/2021 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
@@ -229,8 +229,6 @@ Para el desarrollo del presente proyecto se supone que:
 \end{itemize}
 
 
-
-
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
@@ -238,24 +236,44 @@ Para el desarrollo del presente proyecto se supone que:
 Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
 
 \begin{enumerate}
-	\item Requerimientos funcionales
+	\item Requerimientos diseño
 		\begin{enumerate}
-			\item El sistema debe adquirir como máximo 2000 lineas por segundo
-			\item Tal componente debe...
-			\item El usuario debe poder...
+			\item El sensor lineal es montado en una placa con componente superficiales
+			\item La placa se conecta con el sistema embebido por un cable flex
+		\end{enumerate}
+		
+	\item Requerimientos del sistema embebido
+		\begin{enumerate}
+			\item El sistema adquiere como máximo 2000 lineas por segundo
+			\item El controlador embebido genera las señales de control y datos hacia el sensor
+			\item Un SoC es el responsable del flujo de datos dentro de la FPGA.
+			\item Un bloque de operaciones, paraleliza cálculos
+			\item El sistema embebido debe calcular valores estadísticos: máximos, mínimos, mediana y el rango intercuartil sobre el arreglo de datos
+			\item Datos procesados se envía a la PC
+			\item Comunicación con PC se realiza por USB
+		\end{enumerate}
+	\item Requerimientos de interfaz
+		\begin{enumerate}
+			\item Configuración tiempo de integración del sensor
+			\item Configuración frecuencia de adquisición.
+			\item La interfaz colecta datos del sistema embebido en tiempo real
+			\item La interfaz debe mostrar la señal con sus valores estadísticos en tiempo real
 		\end{enumerate}
 	\item Requerimientos de documentación
 		\begin{enumerate}
-			\item Requerimiento 1
-			\item Requerimiento 2 (prioridad menor)
+			\item El proyecto se documenta con control de versiones 
 		\end{enumerate}
-	\item Requerimiento de testing...
+	\item Requerimiento de testing
+	\begin{enumerate}
+			\item Se caracteriza la medición el uso de filtros frente al sensor y ejecutando mediciones continuas
+			\item Firmware se caracteriza por uso de testbench en Vivado-SDK combinado con herramienta ILA Debugging
+		\end{enumerate}
 	
 	\item Requerimientos de la interfaz
 	\begin{enumerate}
-			\item Comunicacion con PC a traves de puerto USB
-			\item La apliacion en PC almacena y visualiza los datos
-			\item la interfaz debe mostrat estimadores como la mediana, valores maximos y mínimos de la senial.
+			\item Comunicación con PC a través de puerto USB
+			\item La aplicación en PC almacena y visualiza los datos
+			\item La interfaz debe mostrar estimadores como la mediana, valores máximos y mínimos de la senial.
 		\end{enumerate}
 	
 	\item Requerimientos interoperabilidad...
@@ -293,15 +311,14 @@ Se debe indicar explícitamente el criterio para calcular los \textit{story poin
 
 \begin{consigna}{red}
 
-Los entregables del proyecto son (ejemplo):
+Los entregables del proyecto son:
 
 \begin{itemize}
 	\item Manual de uso
 	\item Diagrama de circuitos esquemáticos
-	\item Código fuente del firmware
-	\item Diagrama de instalación
+	\item Código fuente del firmware y testbench
+	\item API del software para integrar con diferentes sensores
 	\item Informe final
-	\item etc...
 \end{itemize}
 
 \end{consigna}
@@ -313,29 +330,51 @@ Los entregables del proyecto son (ejemplo):
 El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
 
 \begin{enumerate}
-\item Grupo de tareas 1
+\item Preparación entorno de trabajo
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Búsqueda de bibliografía sobre sistemas similares (20 hs)
+	\item Búsqueda de materiales (10 hs)
+	\item Instalación herramientas de trabajo (10 hs)
 	\end{enumerate}
-\item Grupo de tareas 2
+\item Diseño placa sensor y controlador
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Esquematice placa de montaje superficial (25 hs)
+	\item Selección de componentes (10 hs)
+	\item Ruteo de placa (15 hs)
+	\item Diseño controlador en el sistema embebido
+	\item Evaluación del controlador mediante banco de pruebas
 	\end{enumerate}
-\item Grupo de tareas 3
+\item Prueba placa módulos sensor
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\item Tarea 4 (tantas hs)
-	\item Tarea 5 (tantas hs)
+	\item Interconexión del modulo con FPGA (5 hs)
+	\item Comunicación entre sensor y FPGA (20 hs)
+	\item Enviar datos desde el sistema embebido a la PC (20 hs)
 	\end{enumerate}
+
+\item Módulo de estadísticos
+	\begin{enumerate}
+	\item Incorporar un SoC y controlar el flujo de datos (20 hs)
+	\item implementar bloque de calculo de estadísticos, paralelizable (20 hs)
+	\item Integración de bloques (20 hs)
+	\end{enumerate}	
+
+\item Interfaz
+	\begin{enumerate}
+	\item Desarrollo de interfaz en Python con control del sensor y sistema embebido (tiempo de integración, frecuencia de trabajo) (20 hs)
+	\item implementar bloque de calculo de estadísticos, paralelizable (20 hs)
+	\item Integración de bloques (20 hs)
+	\end{enumerate}		
+
+\item Gestión 
+	\begin{enumerate}
+	\item Planificación del trabajo final (20 hs)
+	\item Informes regulares de avances (10 hs)
+	\item Confección de la memoria de trabajo (30 hs)
+	\item Presentación y defensa del trabajo final (20 hs)
+	\end{enumerate}		
 \end{enumerate}
 
-Cantidad total de horas: (tantas hs)
+Cantidad total de horas: (600 hs)
 
 Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
 
