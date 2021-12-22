@@ -1,0 +1,104 @@
+\documentclass[border=10pt]{standalone}%{article}
+%\usepackage[margin=1cm]{geometry}
+\usepackage{pgfgantt}
+\usepackage{graphicx}
+\usepackage{xcolor}
+%\usetikzlibrary{positioning}
+
+\ganttset{group/.append style={orange},
+milestone/.append style={red},
+progress label node anchor/.append style={text=red}}
+
+\begin{document}
+
+%    \begin{figure}
+%    \centering
+     \begin{ganttchart}[%Specs
+     y unit title=0.5cm,
+     y unit chart=0.7cm,
+     vgrid,hgrid,
+     title height=1,
+%     title/.style={fill=none},
+     title label font=\bfseries\footnotesize,
+     bar/.style={fill=blue},
+     bar height=0.7,
+%   progress label text={},
+     group right shift=0,
+     group top shift=0.7,
+     group height=.3,
+     group peaks width={0.2},
+     inline]{1}{48}
+    %labels
+    \gantttitle{Sistema de adquisición de imágenes
+con sensor lineal de carga acoplada
+para aplicación en mediciones a
+distancia}{48}\\  % title 1
+    \gantttitle[]{2021}{24}                 % title 2
+    \gantttitle[]{2022}{24} \\              
+    \gantttitle{ene-feb-mar}{6}                      % title 3
+    \gantttitle{abr-may-jun}{6}
+    \gantttitle{jul-ago-sep}{6}
+    \gantttitle{oct-nov-dic}{6}
+    \gantttitle{ene-feb-mar}{6}
+    \gantttitle{abr-may-jun}{6}
+    \gantttitle{jul-ago-sep}{6} 
+    \gantttitle{oct-nov-dic}{6}\\
+    % Setting group if any
+    \ganttgroup[inline=false]{Preparación entorno de trabajo}{20}{21}\\ 
+    \ganttbar[progress=80,inline=false]{Búsqueda bibliografía}{20}{21}\\
+    \ganttbar[progress=40,inline=false]{Búsqueda materiales}{20}{21}\\
+    \ganttbar[progress=0,inline=false]{Instalación herramientas}{20}{21}\\
+    
+    \ganttgroup[inline=false]{PCB sensor de imágenes y controlador}{22}{27} \\ 
+    \ganttbar[progress=0,inline=false]{Esquemático de circuitos}{22}{27} \\
+    \ganttbar[progress=0,inline=false]{Selección de componentes}{22}{27} \\
+    \ganttbar[progress=0,inline=false]{Ruteo de PCB}{22}{27} \\
+    \ganttbar[progress=0,inline=false]{Verificación de dise\~{n}o}{22}{27} \\
+    \ganttmilestone[inline=false]{Placa PCB finalizada}{24} \\
+    \ganttbar[progress=0,inline=false]{Dise\~{n}o controlador}{22}{24} \\
+    \ganttbar[progress=0,inline=false]{Desempe\~{n}o del controlador}{22}{27} \\
+    \ganttbar[progress=0,inline=false]{Consulta con los supervisores}{22}{27} \\
+    
+    
+    \ganttgroup[inline=false]{Pruebas en PCB módulos sensor}{26}{30} \\ 
+    \ganttbar[progress=0,inline=false]{Interconexión del módulo sensor de imágenes con FPGA}{26}{30} \\
+    \ganttbar[progress=0,inline=false]{Evaluar comunicación entre sensor y FPGA}{26}{30} \\
+    \ganttbar[progress=0,inline=false]{Enviar datos prueba desde el sistema embebido a la PC}{26}{30} \\
+    \ganttbar[progress=0,inline=false]{Consulta con los supervisores del trabajo}{26}{30} \\
+    
+    
+    \ganttgroup[inline=false]{Módulo de cálculo estadístico embebido y comunicación}{27}{32} \\ 
+    \ganttbar[progress=0,inline=false]{Estudiar una forma óptima y eficiente de implementar operaciones estadísticas}{27}{32} \\
+    \ganttbar[progress=0,inline=false]{Incorporar un SoC y controlar el flujo de datos entre bloques}{27}{32} \\
+    \ganttbar[progress=0,inline=false]{Implementar cálculo de valores estadístico en paralelo}{27}{32} \\
+    \ganttbar[progress=0,inline=false]{Integración de bloques}{27}{32} \\
+    \ganttbar[progress=0,inline=false]{Comunicación USB hacia la PC}{27}{32} \\
+    \ganttbar[progress=0,inline=false]{Consulta con los supervisores del trabajo}{27}{32} \\
+    
+    
+    \ganttgroup[inline=false]{Interfaz}{33}{35} \\ 
+    \ganttbar[progress=0,inline=false]{Desarrollo de interfaz en Python}{33}{35} \\
+    \ganttbar[progress=0,inline=false]{Documentación de código}{33}{35} \\
+    \ganttbar[progress=0,inline=false]{Integración de bloques}{33}{35} \\
+    \ganttbar[progress=0,inline=false]{Consulta con los supervisores del trabajo}{33}{35} \\
+
+    
+    \ganttgroup[inline=false]{Gestión}{36}{40} \\ 
+    \ganttbar[progress=0,inline=false]{Planificación del trabajo final}{36}{40} \\
+    
+    \ganttbar[progress=0,inline=false]{Informes regulares de avances}{36}{40} \\
+    \ganttbar[progress=0,inline=false]{Confección de la memoria de trabajo}{36}{40} \\
+    \ganttbar[progress=0,inline=false]{Presentación y defensa del trabajo final}{36}{40} \\
+    \ganttbar[progress=0,inline=false]{Consulta con los supervisores del trabajo}{36}{40} \\
+    \ganttbar[progress=0,inline=false]{Presentación y defensa del trabajo final}{36}{40} \\
+    \ganttmilestone[inline=false]{Presentación trabajo final}{40} \\
+    
+    
+
+\end{ganttchart}
+%    \caption{Gantt diagram for 2013--2014 Project}
+%\end{figure}
+\end{document}
+
+
+
